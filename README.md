@@ -53,3 +53,37 @@ Dans un projet C# :
 - le fichier `.sln` organise un ou plusieurs projets ;  
 - les dossiers `bin` et `obj` sont générés automatiquement par l’outil de compilation.
 
+## TP POO – Gestion de cours et d’étudiants en C#
+
+### Objectifs
+
+Dans ce TP, vous allez travailler sur :
+- la création de classes en C#
+- l’utilisation de constructeurs
+- la différence entre constructeur sans paramètres et constructeur avec paramètres
+- la création de plusieurs constructeurs
+- l’utilisation d’une liste d’objets (List<T>)
+- l’utilisation des accesseurs (get/set)
+- l’utilisation d’un attribut static
+- la manipulation d’objets et de collections
+
+Les attributs et méthodes des classes sont indiqués dans le diagramme de classes fourni.
+
+### Exercices 1 à 12
+
+Les exercices 1 à 12 ont été implémentés dans le code du projet (`Program.cs`, `Student.cs`, `Course.cs`).
+
+### Exercice 13 – Vérifier les identifiants automatiques
+
+Observer les valeurs des Id générés pour :
+- les étudiants
+- les cours
+
+**Réponses aux questions :**
+
+1. **Pourquoi chaque objet possède un identifiant différent ?**  
+   Chaque objet possède un identifiant différent car l'attribut `nextId` est partagé entre toutes les instances de la classe (grâce au mot-clé `static`). Lors de la création d'un nouvel objet, l'ID est assigné en utilisant la valeur actuelle de `nextId`, puis `nextId` est incrémenté. Ainsi, chaque nouvel objet reçoit un ID unique et séquentiel.
+
+2. **Pourquoi la variable utilisée pour générer les identifiants est-elle static ?**  
+   La variable `nextId` est déclarée `static` pour qu'elle soit partagée par toutes les instances de la classe. Sans `static`, chaque instance aurait sa propre copie de `nextId`, ce qui entraînerait des IDs dupliqués ou non séquentiels. En la rendant statique, elle maintient un état global pour la classe entière, assurant l'unicité des IDs.
+
