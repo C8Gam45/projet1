@@ -7,7 +7,6 @@ public class Student
     public double Average { get; set; }
     public bool IsScholarshipHolder { get; set; }
 
-    // Constructeur sans paramètres
     public Student()
     {
         Id = nextId++;
@@ -16,7 +15,6 @@ public class Student
         IsScholarshipHolder = false;
     }
 
-    // Constructeur complet
     public Student(string name, double average, bool isScholarshipHolder)
     {
         Id = nextId++;
@@ -25,12 +23,15 @@ public class Student
         IsScholarshipHolder = isScholarshipHolder;
     }
 
-    // Constructeur partiel
     public Student(string name, double average)
     {
         Id = nextId++;
         Name = name;
         Average = average;
-        // IsScholarshipHolder devra être complété avec l'accesseur
+    }
+
+    public override string ToString()
+    {
+        return $"Id: {Id}, Name: {Name}, Average: {Average}, Scholarship: {IsScholarshipHolder}";
     }
 }
