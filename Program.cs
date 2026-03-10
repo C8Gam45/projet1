@@ -99,5 +99,10 @@ class Program
         {
             Console.WriteLine($"{student.Name}: {student.Average}");
         }
+
+        Console.WriteLine("\nExercice 12 - Supprimer un étudiant d'un cours");
+        info.Students.Remove(bernard);
+        Console.WriteLine("Bernard supprimé d'Informatique.");
+        Console.WriteLine($"Étudiants inscrits en Informatique: {string.Join(", ", info.Students.Select(s => s.Name))}");
     }
 }
